@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Enseignant{% endblock %}
+
+{% block body %}
+<section class="container-fluid mt-3">
+    <div class="container d-flex">
+        <a href="{{path("add_enseignant")}}" class="btn btn-primary btn-lg">Ajouter Enseignant</a>
+    </div>
+    <div class="container-fluid mt-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOM</th>
+                    <th>PRENOM</th>
+                    <th>SEXE</th>
+                    <th>EMAIL</th>
+                    <th>CONTACT</th>
+                    <th>ADRESSE</th>
+                    <th>MATIERE</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for enseignant in enseignants %}
+                <tr>
+                    <td>{{enseignant.id}}</td>
+                    <td>{{enseignant.nom}}</td>
+                    <td>{{enseignant.prenom}}</td>
+                    <td>{{enseignant.sexe}}</td>
+                    <td>{{enseignant.email}}</td>
+                    <td>{{enseignant.contact}}</td>
+                    <td>{{enseignant.adresse}}</td>
+                    <td>{{"MATH"}}</td>
+                    <td><a href="#" class="btn btn-success">MODIFIER</a></td>
+                    <td><a href="#" class="btn btn-danger">SUPPRIMER</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

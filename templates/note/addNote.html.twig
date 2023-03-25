@@ -1,0 +1,49 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Ajouter des notes{% endblock %}
+{% block body %}
+<section class="container-fluid mt-5">
+    <div class="row mb-5">
+        <div class="container col-lg-7 mx-auto ">
+            {{form_start(form)}}
+            
+                {{form_widget(form)}}
+                <hr>
+                <button class="btn btn-primary">
+                    ENREGISTRER
+                </button>
+            {{form_end(form)}}
+        </div>
+    </div>
+</section>
+<script>
+    window.onload =()=>{
+        let rows = document.querySelector("#form");
+        let items =rows.querySelectorAll("div");
+        
+        for(elt of items){
+         
+            label=elt.querySelector("label");
+            if(elt.querySelector("select")){
+                elt.classList.add("w-25");
+                elt.classList.add("mb-5");
+
+                label.classList.add("fw-bold");
+                label.classList.add("h3");
+
+                select=elt.querySelector("select");
+                select.classList.add("form-control");
+                
+            } else{
+                hr= document.createElement('hr');
+                rows.insertBefore(hr,elt);
+                elt.classList.add("row");
+                input=elt.querySelector("input");
+                label.classList.add("col-4");
+                input.classList.add("col-8");
+                input.classList.add("input");
+            }
+        }
+    }
+</script>
+{% endblock %}

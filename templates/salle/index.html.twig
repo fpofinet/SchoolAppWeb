@@ -1,0 +1,54 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Salle{% endblock %}
+
+{% block body %}
+<section class="container-fluid mt-3">
+    <div class="container d-flex">
+        <a href="{{path("add_salle")}}" class="btn btn-lg btn-primary">Ajouter Salle</a>
+    </div>
+    <div class="container-fluid mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CODE</th>
+                    <th>Nbre Place</th>
+                    <th>Nbre Occupant</th>
+                    <th>Filière</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for salle in salles %}
+                <tr>
+                    <td>{{salle["id"]}}</td>
+                    <td>{{salle["code"]}}</td>
+                    <td>{{salle["nbre_place"]}}</td>
+                    <td>
+                        {% if salle["effectif"] == null %}
+                            {{0}}
+                        {% else %}
+                            {{salle["effectif"]}}
+                        {% endif %}
+                    </td>
+                    <td>
+                        {% if salle["codeF"] == null %}
+                            {{"Non attribué"}}
+                        {% else %}
+                            {{salle["codeF"]}}
+                        {% endif %}</td>
+                    <td><a href="{{path("update_salle",{'id':salle["id"]})}}" class="btn btn-warning">MODIFIER</a></td>
+                    <td><a href="{{path("delete_salle",{'id':salle["id"]})}}" class="btn btn-danger">SUPPRIMER</a></td>
+                </tr>
+                
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+   
+
+    
+</section>
+{% endblock %}

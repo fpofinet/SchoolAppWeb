@@ -1,0 +1,47 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eleve{% endblock %}
+
+{% block body %}
+<section class="container-fluid mt-2">
+    <div class="container d-flex">
+        <a href="{{path("add_eleve")}}" class="btn btn-primary btn-lg">Ajouter Elève</a>
+    </div>
+    <div class="container-fluid mt-3">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOM</th>
+                    <th>PRENOM</th>
+                    <th>SEXE</th>
+                    <th>EMAIL</th>
+                    <th>CONTACT</th>
+                    <th>ADRESSE</th>
+                    <th>FILIERE</th>
+                    <th></th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for eleve in eleves %}
+                <tr>
+                    <td>{{eleve.id}}</td>
+                    <td>{{eleve.nom}}</td>
+                    <td>{{eleve.prenom}}</td>
+                    <td>{{eleve.sexe}}</td>
+                    <td>{{eleve.email}}</td>
+                    <td>{{eleve.contact}}</td>
+                    <td>{{eleve.adresse}}</td>
+                    <td>{{eleve.filiere.code}}</td>
+                    <td><a href="{{path("info_eleve",{'id':eleve.id })}}" class="btn btn-info">infos...</a></td>
+                    <td><a href="{{path("update_eleve",{'id':eleve.id })}}" class="btn btn-success">MODIFIER</a></td>
+                    <td><a href="{{path("bulletin",{'id':eleve.id })}}" class="btn btn-danger">SUPPRIMER</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,96 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eleve{% endblock %}
+{% block body %}
+<section class="container mt-3">
+    <div class="row my-5">
+        <div class="col-lg-4">
+            <div class="card mb-4">
+                <div class="card-body text-center">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar" class="rounded-circle img-fluid" style="width: 150px;">
+                    <h5 class="my-3">{{eleve.nom }} {{ eleve.prenom }}</h5>
+                    <div class="d-flex justify-content-center mb-2">
+                        <a class="btn btn-info" class="btn btn-primary">Changer photo</a>
+                    </div>
+                </div>
+            </div> 
+            <div class="">
+                <a href="{{path("payer",{'id': eleve.id}) }}" class="btn btn-info btn-lg">Payer Scolarité</a>
+            </div>         
+        </div>
+        <div class="col-lg-8">
+            <div class="card mb-4">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Nom : </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{eleve.nom}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Prénom : </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{eleve.prenom}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Téléphone : </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{eleve.contact}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Sexe : </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{eleve.sexe}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Date de Naissance : </p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0"> {{eleve.dateNaiss | date('d/m/Y') }} <span>({{age }} ans)</span>  </p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Filière</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{eleve.filiere.code}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="row">
+                        <div class="col-sm-3">
+                            <p class="mb-0">Addresse</p>
+                        </div>
+                        <div class="col-sm-9">
+                            <p class="text-muted mb-0">{{eleve.adresse}}</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="">
+                        <a href="#" class="btn btn-danger"> Supprimer </a>
+                        <a href="#" class="btn btn-success"> Modifier </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

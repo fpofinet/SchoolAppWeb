@@ -1,0 +1,19 @@
+{% form_theme form 'bootstrap_5_layout.html.twig' %}
+{% extends 'base.html.twig' %}
+
+{% block title %}Eleve{% endblock %}
+{% block body %}
+<section class="container mt-3">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            {{form_start(form)}}
+                {{form_widget(form)}}
+                <hr>
+                <button class="btn btn-primary">
+                    ENREGISTRER
+                </button>
+            {{form_end(form)}}
+        </div>
+    </div>
+</section>
+{% endblock %}

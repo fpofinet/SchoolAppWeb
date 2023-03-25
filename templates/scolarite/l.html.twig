@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Scolarite{% endblock %}
+
+{% block body %}
+<section class="container mb-5">
+    
+    <div class="row gy-4">
+        {% for eleve in eleves %}
+        <div class="col-lg-3">
+            <div class="card p-3 text-center"> 
+                <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="" class="card-img-top">
+                <div class="card-body">
+                    <p class="">
+                        <span class="fw-bold">{{eleve.nom}} </span><span> {{eleve.prenom }}</span>
+                    </p>
+                    <div class="">
+                        <div class="progress">
+                            <div class="progress-bar" style="width:{{ (eleve.scolarite.total / 200000) * 100 }}%">{{ (eleve.scolarite.total / 200000) * 100 }}%</div>
+                        </div>
+                        <span class="fw-bold">{{eleve.scolarite.total }} FCFA sur xxx </span> 
+                    </div>
+                </div>
+               <a href="{{path("payer",{'id': eleve.id})}}" class="stretched-link text-dark " style='text-decoration: none'></a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}

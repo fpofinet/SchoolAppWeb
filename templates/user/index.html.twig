@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}User{% endblock %}
+
+{% block body %}
+<section class="container mt-5">
+    <div class="container justify-content-center d-flex">
+        <a href="{{path("add_user")}}" class="btn btn-primary btn-lg">Ajouter Elèves</a>
+    </div>
+    <div class="container mt-5">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>NOM</th>
+                    <th>PRENOM</th>
+                    <th>SEXE</th>
+                    <th>EMAIL</th>
+                    <th>CONTACT</th>
+                    <th>ADRESSE</th>
+                    <th>FILIERE</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for eleve in eleves %}
+                <tr>
+                    <td>{{eleve.id}}</td>
+                    <td>{{eleve.nom}}</td>
+                    <td>{{eleve.prenom}}</td>
+                    <td>{{eleve.sexe}}</td>
+                    <td>{{eleve.email}}</td>
+                    <td>{{eleve.contact}}</td>
+                    <td>{{eleve.adresse}}</td>
+                    <td>{{eleve.filiere.code}}</td>
+                    <td><a href="#" class="btn btn-success">MODIFIER</a></td>
+                    <td><a href="#" class="btn btn-danger">SUPPRIMER</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

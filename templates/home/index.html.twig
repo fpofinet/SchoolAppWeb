@@ -1,0 +1,102 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Home{% endblock %}
+
+{% block body %}
+<section class="container mb-5"> 
+    <div class="row gy-4">
+       <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/eleve.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">ELEVES</span>
+                        <a href="{{path("app_eleve")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+       <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/salle.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">SALLES</span>
+                        <a href="{{path("app_salle")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/sco.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">SCOLARITES</span>
+                        <a href="{{path("app_scolarite")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/enseignant.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">ENSEIGNANTS</span>
+                        <a href="{{path("app_enseignant")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/matiere.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">MATIERES</span>
+                        <a href="{{path("app_matiere")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/note.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">NOTES</span>
+                        <a href="{{path("app_note")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card bg-secondary">
+                <div class="card-body d-flex">
+                    <div>
+                        <img src="{{asset("icons/filiere.png")}}" alt="">
+                    </div>
+                    <div class="px-5 py-5 float-end">
+                        <span class="fw-bold h3">FILIERES</span>
+                        <a href="{{path("app_filiere")}}" class="stretched-link text-dark" style='text-decoration: none'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

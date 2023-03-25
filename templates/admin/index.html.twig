@@ -1,0 +1,76 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Admin Panel{% endblock %}
+
+{% block body %}
+<section class="container-fluid">   
+    <div class="row">
+        <div class="col-md-2">
+            <div class="mt-5">
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path("app_eleve")}}">Elèves</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path("app_salle")}}">Salle</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path("app_matiere")}}">Matières</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path("app_enseignant")}}">Enseignants</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{path("app_filiere")}}">Filières</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Notes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Scolarités</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-md-10 mt-5">
+            <div class="row g-3">
+                <div class="col-md-4">
+                    <div class="card">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quo molestias 
+                        doloribus animi, fugiat beatae possimus dolore molestiae esse ad tempore eos ipsum 
+                        corrupti eligendi placeat tenetur exercitationem at reprehenderit.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quo molestias 
+                        doloribus animi, fugiat beatae possimus dolore molestiae esse ad tempore eos ipsum 
+                        corrupti eligendi placeat tenetur exercitationem at reprehenderit.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quo molestias 
+                        doloribus animi, fugiat beatae possimus dolore molestiae esse ad tempore eos ipsum 
+                        corrupti eligendi placeat tenetur exercitationem at reprehenderit.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quo molestias 
+                        doloribus animi, fugiat beatae possimus dolore molestiae esse ad tempore eos ipsum 
+                        corrupti eligendi placeat tenetur exercitationem at reprehenderit.
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card">
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque quo molestias 
+                        doloribus animi, fugiat beatae possimus dolore molestiae esse ad tempore eos ipsum 
+                        corrupti eligendi placeat tenetur exercitationem at reprehenderit.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

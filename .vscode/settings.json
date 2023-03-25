@@ -1,0 +1,11 @@
+{
+    "emmet.preferences": {
+
+    },
+    "files.associations": {
+        "*.html": "twig"
+    },
+    "emmet.includeLanguages": {
+        "twig": "html"
+    },
+}

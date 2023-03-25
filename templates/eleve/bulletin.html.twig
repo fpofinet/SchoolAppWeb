@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Eleve{% endblock %}
+{% block body %}
+<section class="container mt-3">
+    <div class="row">
+        <div class="col-lg-6 mx-auto">
+            <table class="table">
+                <thead class="bg-primary">
+                    <tr>
+                        <th scope="col">Matière</th>
+                        <th scope="col">Controle</th>
+                        <th scope="col">Examen</th>
+                        <th scope="col">Rattrapage</th>
+                        <th scope="col">Moyenne</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for note in notes %}
+                        <tr>
+                            <td>{{note.matiere.code}}</td>
+                            <td>{{note.devoir}}</td>
+                            <td>{{note.note}}</td>
+                            <td>{{note.rattrapage}}</td>
+                            <td>{{ (note.note + note.devoir ) / 2}}</td>
+                        </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</section>
+{% endblock %}

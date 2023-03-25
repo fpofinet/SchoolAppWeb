@@ -1,0 +1,45 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Filiere{% endblock %}
+
+{% block body %}
+<section class="container-fluid mt-3">
+    <div class="container d-flex">
+        <a href="{{path("add_filiere")}}" class="btn btn-lg btn-primary">Ajouter Filière</a>
+    </div>
+    <div class="container-fluid mt-3">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CODE</th>
+                    <th>DESCRIPTION</th>
+                    <th>EFFECTIF</th>
+                    <th>SALLE</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for filiere in filieres %}
+                <tr>
+                    <td>{{filiere.id}}</td>
+                    <td>{{filiere.code}}</td>
+                    <td>{{filiere.libelle}}</td>
+                    <td>{{filiere.effectif}}</td>
+                    <td>
+                        {% if filiere.salle != null %}
+                            {{filiere.salle.code }}
+                        {% else %}
+                            {{"--"}}
+                        {% endif %}
+                    </td>
+                    <td><a href="{{path("update_filiere",{'id':filiere.id})}}" class="btn btn-warning">MODIFIER</a></td>
+                    <td><a href="{{path("delete_filiere",{'id':filiere.id})}}" class="btn btn-danger">SUPPRIMER</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

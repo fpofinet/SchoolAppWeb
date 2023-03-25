@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Matiere{% endblock %}
+
+{% block body %}
+<section class="container-fluid mt-3">
+    <div class="container d-flex ">
+        <a href="{{path("add_matiere")}}" class="btn btn-lg btn-primary">Ajouter Matiere</a>
+    </div>
+    <div class="container-fluid mt-5">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>CODE MATIERE</th>
+                    <th>DESCRIPTION</th>
+                    <th>ENSEIGNANT</th>
+                    <th>FILIERES</th>
+                    <th></th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+            {% for matiere in matieres %}
+                <tr>
+                    <td>{{matiere.id}}</td>
+                    <td>{{matiere.code}}</td>
+                    <td>{{matiere.libelle}}</td>
+                    <td>{{matiere.enseignant.nom }} {{matiere.enseignant.prenom }}</td>
+                    <td>
+                        {% for elt in matiere.filiere %}
+                            {{elt.code }};
+                        {% endfor %}
+                    </td>
+                    <td><a href="{{path("update_matiere",{'id':matiere.id})}}" class="btn btn-warning">MODIFIER</a></td>
+                    <td><a href="{{path("delete_matiere",{'id':matiere.id})}}" class="btn btn-danger">SUPPRIMER</a></td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+{% endblock %}

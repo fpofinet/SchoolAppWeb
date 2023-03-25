@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="h-100">
     <head>
         <meta charset="UTF-8">
         <title>{% block title %}Welcome!{% endblock %}</title>
@@ -13,7 +13,49 @@
             {{ encore_entry_script_tags('app') }}
         {% endblock %}
     </head>
-    <body>
-        {% block body %}{% endblock %}
+    <body class="d-flex flex-column h-100">
+        <header class="bg-dark">
+            <div class="container px-4 px-lg-5">
+                <div class="text-center text-white">
+                    <p class="lead fw-normal text-white display-1">GINIE SCHOOL APP </p>
+                </div>
+            </div>
+        </header>
+        <nav class="navbar navbar-expand-sm bg-secondary justify-content-center mb-4">
+            <ul class="navbar-nav h5">
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_home")}}">HOME</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_eleve")}}">Elèves</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_salle")}}">Salle</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_matiere")}}">Matières</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_enseignant")}}">Enseignants</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_filiere")}}">Filières</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_note")}}">Notes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link btn btn-secondary mx-2" href="{{path("app_scolarite")}}">Scolarités</a>
+                </li>
+            </ul>
+        </nav>
+        <div class="container mb-5">
+            {% block body %}{% endblock %}
+        </div>
+        <footer class="footer mt-auto py-3 bg-dark">
+            <div class="container">
+                <span class="text-light">Place sticky footer content here.</span>
+            </div>
+        </footer>
     </body>
 </html>

@@ -1,0 +1,23 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Note{% endblock %}
+
+{% block body %}
+<section class="container">
+    <div class="row gy-4">
+        {% for matiere in matieres %}
+        <div class="col-lg-3">
+            <div class="card p-3 text-center"> 
+                <p class="card-title  display-2 fw-bold">
+                    {{matiere.code}}
+                </p>
+                <p class="h3">
+                    <a href="{{path("add_note",{'code': filiere,'codem':matiere.code})}}" class="stretched-link text-dark" style='text-decoration: none'>{{matiere.libelle}}</a>
+                </p>
+               
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
+{% endblock %}
